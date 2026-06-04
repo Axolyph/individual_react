@@ -1,0 +1,161 @@
+/* src/components/Hero/Hero.css */
+.hero {
+    position: relative;
+    padding: 4rem 0 6rem;
+    overflow: hidden;
+}
+
+.hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero__gradient {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-premium);
+}
+
+.hero__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    opacity: 0.5;
+}
+
+.hero__wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero__content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.hero__title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero__desc {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin: 0 0 2.5rem;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+.hero__cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-hero--primary {
+    background: white;
+    color: var(--secondary);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-hero--primary:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background: #f8fafc;
+}
+
+.btn-hero--secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero--secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 0 4rem;
+    }
+
+    .hero__title {
+        font-size: 2.4rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero__desc {
+        font-size: 1.05rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .hero__cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-hero {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .hero__badge {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+}

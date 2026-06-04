@@ -1,0 +1,17 @@
+.app-layout {
+  min-height: 100vh;
+  background: transparent;
+}
+
+main {
+  display: block;
+}
+
+.section-title {
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+}

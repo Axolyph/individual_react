@@ -1,0 +1,38 @@
+/* src/components/Benefits/Benefits.css */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem auto;
+}
+
+.benefit-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.benefit-icon {
+    color: var(--primary);
+    background: rgba(121, 52, 243, 0.06);
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.benefit-card h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.benefit-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

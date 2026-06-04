@@ -1,0 +1,30 @@
+/* src/components/Categories/Categories.css */
+.categories-filter {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+    background: var(--gradient-premium);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-sm);
+}
