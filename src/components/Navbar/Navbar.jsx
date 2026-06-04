@@ -1,6 +1,6 @@
 import './Navbar.css';
 import logo from '../../assets/logonovashop.png';
-import { ShoppingBag, Menu, Home, Store, Phone } from 'lucide-react';
+import { ShoppingBag, Menu, Home, Store } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
 const Navbar = ({ onCartOpen, onMenuOpen }) => {
@@ -20,7 +20,6 @@ const Navbar = ({ onCartOpen, onMenuOpen }) => {
                 <ul className="navbar__links">
                     <li><a href="/" className="active"><Home size={16} /> Inicio</a></li>
                     <li><a href="#productos"><Store size={16} /> Tienda</a></li>
-                    <li><a href="#contacto"><Phone size={16} /> Contacto</a></li>
                 </ul>
 
                 <div className="navbar__actions">

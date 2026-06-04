@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import MobileMenu from './components/MobileMenu/MobileMenu';
@@ -6,13 +6,10 @@ import Hero from './components/Hero/Hero';
 import Categories from './components/Categories/Categories';
 import SearchBar from './components/SearchBar/SearchBar';
 import ProductGrid from './components/ProductGrid/ProductGrid';
-import LoadingSkeleton from './components/LoadingSkeleton/LoadingSkeleton';
 import ProductModal from './components/ProductModal/ProductModal';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Checkout from './components/Checkout/Checkout';
 import OrderSuccess from './components/OrderSuccess/OrderSuccess';
-import Benefits from './components/Benefits/Benefits';
-import ContactSection from './components/ContactSection/ContactSection';
 import Footer from "./components/Footer/Footer";
 import auriculares from './assets/auriculares.jpg';
 import iphone from './assets/iphone.jpg';
@@ -45,14 +42,13 @@ const catalogoCompleto = [
       rating: (4.2 + (id % 8) * 0.1).toFixed(1),
       inStock: id % 4 !== 0,
       discount: id % 5 === 0 ? "10%" : null,
-      shortDesc: `Disfruta del mÃ¡ximo confort y rendimiento con el nuevo e-commerce pack de NovaShop diseÃ±ado para exigentes.`,
+      shortDesc: "Disfruta del maximo confort y rendimiento con el nuevo NovaShop diseñado para exigentes.",
       image: imageSelected
     };
   })
 ];
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState('Todas');
   const [search, setSearch] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -64,11 +60,6 @@ function App() {
     paymentMethod: '',
     total: '0.00'
   });
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
 
   const productosFiltrados = catalogoCompleto.filter(p => {
     const cumpleCat = category === 'Todas' || p.category === category;
@@ -106,7 +97,6 @@ function App() {
 
       <main>
         <Hero />
-        <Benefits />
 
         <section id="productos" className="container" style={{ paddingBottom: '5rem' }}>
           <h2 className="section-title" style={{ textAlign: 'center', fontSize: '2.2rem' }}>CatÃ¡logo Exclusivo</h2>
@@ -117,14 +107,8 @@ function App() {
           <SearchBar search={search} setSearch={setSearch} />
           <Categories activeCategory={category} setCategory={setCategory} />
 
-          {loading ? (
-            <LoadingSkeleton />
-          ) : (
-            <ProductGrid products={productosFiltrados} onSelectProduct={setSelectedProduct} />
-          )}
+          <ProductGrid products={productosFiltrados} onSelectProduct={setSelectedProduct} />
         </section>
-
-        <ContactSection />
       </main>
 
       <Footer />

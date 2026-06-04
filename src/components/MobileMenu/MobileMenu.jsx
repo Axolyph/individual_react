@@ -1,5 +1,5 @@
 import './MobileMenu.css';
-import { X, Home, Store, Phone } from 'lucide-react';
+import { X, Home, Store } from 'lucide-react';
 
 const MobileMenu = ({ isOpen, onClose }) => {
     return (
@@ -10,7 +10,6 @@ const MobileMenu = ({ isOpen, onClose }) => {
                 <nav className="mobile-menu__nav">
                     <a href="/" onClick={onClose}><Home size={18} /> Inicio</a>
                     <a href="#productos" onClick={onClose}><Store size={18} /> Tienda</a>
-                    <a href="#contacto" onClick={onClose}><Phone size={18} /> Contacto</a>
                 </nav>
             </div>
         </div>
