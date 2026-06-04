@@ -50,7 +50,7 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
 
     const handlePayment = async () => {
         setProcessing(true);
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
 
         clearCart();
         setProcessing(false);
@@ -89,7 +89,7 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
                         <div className="step-content">
                             <h3>Resumen de Compra</h3>
                             <div className="cart-summary">
-                                {cartItems.map(item => (
+                                {cartItems.map((item) => (
                                     <div key={item.id} className="summary-item">
                                         <img src={item.image} alt={item.name} />
                                         <div>
@@ -155,7 +155,7 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
                         <div className="step-content">
                             <h3>Selecciona Método de Pago</h3>
                             <div className="payment-methods">
-                                {paymentMethods.map(method => {
+                                {paymentMethods.map((method) => {
                                     const Icon = method.icon;
                                     return (
                                         <label key={method.id} className={`payment-card ${paymentMethod === method.id ? 'selected' : ''}`}>
@@ -196,7 +196,7 @@ const Checkout = ({ isOpen, onClose, onSuccess }) => {
                                         <label>Nombre del titular</label>
                                         <input
                                             type="text"
-                                            placeholder="Juan Perez"
+                                            placeholder="Juan Pérez"
                                             value={paymentData.cardName}
                                             onChange={(e) => setPaymentData({ ...paymentData, cardName: e.target.value })}
                                         />
