@@ -1,11 +1,11 @@
 import './Navbar.css';
 import logo from '../../assets/logonovashop.png';
-import { ShoppingBag, User, Menu, Home, Store, Phone } from 'lucide-react';
+import { ShoppingBag, Menu, Home, Store, Phone } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
-const Navbar = ({ onCartOpen, onMenuOpen, onLoginOpen, isLoggedIn }) => {
+const Navbar = ({ onCartOpen, onMenuOpen }) => {
     const { getTotalItems } = useCart();
-    
+
     return (
         <nav className="navbar">
             <div className="container navbar__wrapper">
@@ -24,13 +24,6 @@ const Navbar = ({ onCartOpen, onMenuOpen, onLoginOpen, isLoggedIn }) => {
                 </ul>
 
                 <div className="navbar__actions">
-                    <button
-                        className={`navbar__icon-btn ${isLoggedIn ? 'is-logged' : ''}`}
-                        onClick={onLoginOpen}
-                        title={isLoggedIn ? 'Sesión iniciada' : 'Iniciar sesión'}
-                    >
-                        <User size={20} />
-                    </button>
                     <button className="navbar__cart-trigger" onClick={onCartOpen}>
                         <ShoppingBag size={20} />
                         <span className="cart-badge">{getTotalItems()}</span>
